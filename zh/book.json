@@ -1,0 +1,11 @@
+{
+	"title":"JavaScript游戏开发",
+	"description":"This is such a great book!",
+	"isbn":"123-4-56-123456-0",
+	"language": "zh",
+  "variables": {
+    "myVariable": "`Hello World`"
+  },
+	"plugins":[],
+	"pluginsConfig":{}
+}
