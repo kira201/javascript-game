@@ -2,7 +2,7 @@
 	"title":"JavaScript游戏开发",
 	"description":"This is such a great book!",
 	"isbn":"123-4-56-123456-0",
-	"language": "zh",
+	"language": "en",
   "variables": {
     "myVariable": "`Hello World`"
   },
