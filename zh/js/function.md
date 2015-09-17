@@ -22,6 +22,7 @@ function(){} //语法错误 函数定义语句不可以缺少函数名称
 (function(){})() //正确 定义一个匿名函数然后立刻执行
 var foo = function(){}; //正确 定义一个匿名函数赋给foo变量。
 ```
+
 ## 参数
 
 ## 一等公民
@@ -34,9 +35,14 @@ var foo = function(){}; //正确 定义一个匿名函数赋给foo变量。
 
 ## 闭包
 
+## 立即调用的函数表达式IIFE(Immediately-invoked Function Expression)
+
+## 构造函数与原型
+
+
+
+
 ```javascript
-
-
 //函数的递归调用
 function factorial(n){
   if(n<=1) return 1;

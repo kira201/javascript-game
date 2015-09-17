@@ -20,7 +20,7 @@
   * [组件模式](pattern/component.md)
   * [数据绑定](pattern/databind.md)
   * [鸭式辩型](pattern/duck.md)
-  * [掺合模式mixin]（pattern/mixin.md）
+  * [掺合模式mixin](pattern/mixin.md)
   * [回调与异步](pattern/async.md)
 * [开发工具链整合](env/index.md)
   * [运行环境](env/runtime.md)
