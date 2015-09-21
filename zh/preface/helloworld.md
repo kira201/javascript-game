@@ -1,11 +1,5 @@
 # 准备
 
-## Hello World
-开发者工具
-```js
-console.log('hello world');
-```
-
 ## 过程式编程
 ```js
 var listener = function(eventName, data) {}

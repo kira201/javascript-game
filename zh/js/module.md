@@ -90,6 +90,53 @@ function(module, exports, require) {
 })(/*模块列表数组*/)
 ```
 
+## 避免模块的循环引用
+问题:
+```js
+//test1.js
+var test2 = require('./test2.js');
+module.exports = {
+    moduleName: 'test1.js',
+    test2: test2
+}
+//test2.js
+var test1 = require('./test1.js');
+module.exports = {
+    module.name: 'test2.js',
+    test1: test1
+}
+//run.js
+console.log(require('./test1.js'));
+/*运行结果
+{ moduleName: 'test1.js',
+  test2: { 
+    moduleName: 'test2.js',
+    test1: {} //test1为空对象
+  }
+}
+```
+原因：可以根据上节的require函数的实现进行分析
+解决方案：对模块进行延时加载
+```js
+//test1.js
+module.exports = function(){
+	var test2 = require('./test2.js');
+	return {
+		moduleName: 'test1.js',
+		test2: test2
+	}
+}
+//test2.js
+var test1 = require('./test1.js');
+module.exports = {
+    moduleName: 'test2.js',
+    test1: test1
+}
+//run.js
+console.log(require('./test1.js')());
+*/
+```
+
 ## exports的缺陷
 根据上节代码看出模块加载器最终返回的是module.exports而不是exports，所以在模块中可以对module.exports赋值但不可以对exports直接赋值，只能对exports对象进行修改。
 所以在模块中尽量避免使用exports，一律使用module.export， 以免引起不必要的麻烦。
@@ -109,3 +156,4 @@ module.exports = {
 };//可以
 
 ```
+
