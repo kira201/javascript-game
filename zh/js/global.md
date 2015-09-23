@@ -57,12 +57,22 @@ date.constructor === Data //true
 * eval
 
 ## 动态计算表达式eval
+可用于字符串模板，故事剧情模板，技能描述附加公式计算的字符串模板
 ```js
-function test(){
-    "use strict"
-    var jsonstr = '{"x":1}';
-    var obj = eval('(' + jsonstr + ')');//如果去掉小括号括号，会把里边的大括号内容解释为作用域而不是对象了。
-    return obj;
+function test(strTemplate) {
+    "use scrict"
+    var x = 1;
+    var y = 2;
+    //先将字符串用`分割然后对具有()形式的部分进行表达式求职计算
+    return strTemplate.split(/`/g).map(function(s) {
+        if (s.substr(0, 1) === '(' && s.substr(-1) === ')') {
+            var obj = eval(s); //计算出表达式
+            return '颜色:' + obj.c + '值:' + obj.v
+        } else {
+            return s;
+        }
+    }).join('');
 }
-test(); //=>{x:1}
+
+test("x+y=`({c:'red',v:x+y})`  \n x-y=`({c:'blue',v:x-y})`");
 ```

@@ -11,6 +11,9 @@ json vs xml
 JavaScript基础
 中学数学物理
 
+使用REPL学习JavaScript
+编程术语 REPL（Read-Eval-Print Loop） 中文的话有翻译成“交互式解释器”或“交互式编程环境”的。
+
 ## 背景
 * JavaScript优势 JavaScript *全栈式开发 适用范围广泛 (浏览器html5 服务器 客户端脚本cocos2d-js windows客户端 手机客户端app(react-native) 物联网Johnny-Five) *生态繁荣(npm github 工具链 framework) *最快的脚本语言 *易上手 *非玩具 *多范式
 * 工程化的思考与实践 不会随着时间而快速腐败
