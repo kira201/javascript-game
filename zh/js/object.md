@@ -5,21 +5,22 @@
 * 其他叫法：散列表、字典、关联数组等。
 * 对象可以从一个称为原型的对象上继承属性。这种原型式继承是JavaScript的核心特性。
 
+## 创建对象
 ```javascript
-//创建对象
 var a = {x:1, y:2}; //推荐使用对象直接量创建对象
 var b = new Object(); //通过new方法创建对象是不推荐的。
 function Test(){
   this.a = 1;
   this.b = 2;
-}
-var c = new Test(); //Test{a:1, b:2} 通过new 构造函数创建对象
+}//定义构造函数
+var c = new Test(); //Test{a:1, b:2} 通过new+构造函数创建对象
 var d = new Date();
 var e = []; //数组直接量
 var f = new Array();
-var g = /javascript/; //正则表达式直接量
+var g = /abc/; //正则表达式直接量
 var h = new Regexp("javascript"); //
 
+## 原型链
 /**
  * 通过原型继承创建一个新对象
  */
@@ -34,8 +35,9 @@ function createObject(p){
   return new f();
 }
 ```
+
+## 属性访问
 ```javascript
-//访问属性值
 var p = {x:1, y:2}; //创建对象
 p.x; //1 通过".属性名"访问属性值
 p.x = 2; //属性赋值

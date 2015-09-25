@@ -10,6 +10,7 @@
 * Function 函数对象的构造函数
 * RegExp 正则表达式的构造函数
 * Data 日期对象的构造函数
+* Error 错误对象构造函数
 * Math 数学函数库
 * Console 控制台对象
 * JSON 解析函数库
