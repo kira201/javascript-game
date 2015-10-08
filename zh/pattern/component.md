@@ -1,4 +1,4 @@
-//# 组件模式
+# 组件模式
 组件基类 components/Component.js
 ```js
 class Component {

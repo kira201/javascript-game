@@ -94,3 +94,4 @@ module.exports = function createHero(config){
 		return new HeroClass(config);
 	}
 };
+```
