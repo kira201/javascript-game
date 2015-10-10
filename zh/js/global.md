@@ -59,7 +59,7 @@ date.constructor === Data //true
 * isNaN
 * eval
 
-## 动态计算表达式eval
+## 动态计算表达式 eval
 可用于字符串模板，故事剧情模板，技能描述附加公式计算的字符串模板
 ```js
 function test(strTemplate) {
@@ -79,3 +79,30 @@ function test(strTemplate) {
 
 test("x+y=`({c:'red',v:x+y})`  \n x-y=`({c:'blue',v:x-y})`");
 ```
+
+## console 对象
+console.log
+console.info
+console.warn
+console.error
+console.group
+console.groupCollapsed
+console.groupEnd
+console.log('%chello world','font-size:25px;color:red;');
+console.table
+console.assert
+console.count('foo 被执行的次数：');
+console.dir([1,2,3]);
+console.time("性能测试");
+var arr = [];
+for (var i = 0; i < 10000; i++) {
+    arr[i] = {};
+};
+console.timeEnd("性能测试");
+
+console.trace('print my call stack');
+
+monitor(func)
+unmonitor(func)
+debug(func)
+undebug(func)

@@ -238,27 +238,21 @@ tomsay('hi'); //Tom:hi
 petersay('hi'); //Peter:hi
 ```
 
-## 闭包
+## 闭包 (Closure)
 ```js
-//静态函数实现
-function uuid(){
-  if(uuid.id === undefined) uuid.id=0;
-  uuid.id ++;
-  return uuid.id;
-}
-uuid(); //1
-uuid(); //2
-uuid.id //2 uuid.id是暴露的
-//静态函数的改善版本，闭包特性
-var uuid = (function(){
-  var id = 0;
-  return function(){
-    id++;
-    return id;
-  }
+var myClosure = (function() {
+	var counter = 0;
+	var inc = function() {
+		return ++counter;
+	}
+	var dec = function() {
+		return --counter;
+	}
+	return {
+		inc: inc,
+		dec: dec
+	}
 })();
-uuid(); //1
-uuid(); //2
 
 //错误的闭包用法
 function constfuncs(){
