@@ -6,6 +6,9 @@ class Component {
 		this.owner = owner;
 		this.config = config;
 	},
+	sendMessage(){
+		this.owner.sendMessage.apply(this.owner, arguments);
+	},
 	onAdd(){},
 	onRemove(){},
 	onMessage(){}

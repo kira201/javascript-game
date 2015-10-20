@@ -104,6 +104,9 @@ function inherits(ctor, superCtor) {
 };
 
 function BaseClass(){}//定义一个基类
+BaseClass.prototype.superProto = function(){
+  return this.constructor.super_.prototype;
+}
 /**
  * 给基类顶一个静态方法extend，用于创建子类
  * @param {Object} props 新属性新方法
@@ -115,8 +118,10 @@ BaseClass.extend = function(props){
     //用init函数代替构造函数
     if(this.init) this.init.apply(this, arguments);
   }
-  //将这个继承方法传递给子类
-  F.extend = this.extend;
+  //将静态方法传递给子类
+  for(var i in this){
+    F[i] = this[i];
+  }
   //原型继承
   inherits(F, this);
   //添加新属性新方法
